@@ -235,15 +235,13 @@ function toArrayOfSquares(arr) {
  *   [ 0, 0, 0, 0, 0]         => [ 0, 0, 0, 0, 0]
  *   [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] => [ 1, 3, 6, 10, 15, 21, 28, 36, 45, 55 ]
  */
-function getMovingSum(/* arr */) {
-  // const newArr = [];
-
-  // const function newA =  (prev, curr, i) {
-  //   return newArr[i] = (prev + curr, 0);
-  // };
-
-  // arr.reduce(newA)
-  // return newArr;
+function getMovingSum(arr) {
+  const modArr = [];
+  arr.reduce((acc, value, index) => {
+    modArr[index] = acc + value;
+    return modArr[index];
+  }, 0);
+  return modArr;
 }
 
 /**
@@ -387,8 +385,8 @@ function getFalsyValuesCount(arr) {
  *    [ null, undefined, null ], null => 2
  *    [ true, 0, 1, 'true' ], true => 1
  */
-function findAllOccurences(/* arr, item */) {
-  throw new Error('Not implemented');
+function findAllOccurences(arr, item) {
+  return arr.filter((current) => current === item).length;
 }
 
 /**
@@ -556,9 +554,9 @@ function selectMany(arr, childrenSelector) {
  *   ['one','two','three'], [2]       => 'three'  (arr[2])
  *   [[[ 1, 2, 3]]], [ 0, 0, 1 ]      => 2        (arr[0][0][1])
  */
-function getElementByIndexes(arr, indexes) {
-  // throw new Error('Not implemented');
-  return `${arr}${indexes}`;
+function getElementByIndexes(/* arr, indexes */) {
+  throw new Error('Not implemented');
+  // return `${arr}${indexes}`;
 }
 
 
